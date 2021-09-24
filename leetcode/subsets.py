@@ -1,3 +1,4 @@
+"""리트코드 78번 문제"""
 from typing import List
 
 
