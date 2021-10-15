@@ -38,3 +38,21 @@ ATL JFK
 
 answer = findItinerary(tickets)
 print(answer)
+
+
+def findItinerary2(tickets: List[List[str]]) -> List[str]:
+    graph = collections.defaultdict(list)
+    for a, b in sorted(tickets, reverse=True):
+        graph[a].append(b)
+    route = []
+    print("그래프: ", graph)
+    def dfs(a):
+        while graph[a]:
+            dfs(graph[a].pop())
+        route.append(a)
+
+    dfs('JFK')
+    return route[::-1]
+
+answer = findItinerary2(tickets)
+print(answer)
