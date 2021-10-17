@@ -32,6 +32,8 @@ def findItinerary(tickets: List[List[str]]) -> List[str]:
     print("결과: ", route)
     # 다시 뒤집어 어휘 순 결과로
     return route[::-1]
+
+
 """
 ATL JFK
 """
@@ -46,6 +48,7 @@ def findItinerary2(tickets: List[List[str]]) -> List[str]:
         graph[a].append(b)
     route = []
     print("그래프: ", graph)
+
     def dfs(a):
         while graph[a]:
             dfs(graph[a].pop())
@@ -54,5 +57,23 @@ def findItinerary2(tickets: List[List[str]]) -> List[str]:
     dfs('JFK')
     return route[::-1]
 
+
 answer = findItinerary2(tickets)
 print(answer)
+
+
+def findItinerary3(tickets: List[List[str]]) -> List[str]:
+    pass
+    # graph = collections.defaultdict(list)
+    # for a, b in sorted(tickets, reverse=True):
+    #     graph[a].append(b)
+    # route = []
+    # print("그래프: ", graph)
+    #
+    # def dfs(a):
+    #     while graph[a]:
+    #         dfs(graph[a].pop())
+    #     route.append(a)
+    #
+    # dfs('JFK')
+    # return route[::-1]
